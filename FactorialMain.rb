@@ -20,6 +20,7 @@ for loop in starting..ending do
 
   value = factorialWithLoop.calculate(loop)
   
-  numberOut.format('data/Factorial' + loop.to_s + 'W' + width.to_s + 
-    'L' + left.to_s + 'R' + right.to_s + '.txt', value.to_s)
+  numberOut.format('factorialdata/Factorial' + loop.to_s + 'W' +
+    width.to_s + 'L' + left.to_s + 'R' + 
+    right.to_s + '.txt', value.to_s)
 end
