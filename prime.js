@@ -1,0 +1,2 @@
+/* Please put your code here for how to generate a prime number.
+*/
