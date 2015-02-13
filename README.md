@@ -3,6 +3,10 @@ Fake Big Data Using Number Series
 
 Changes: We are going to use JavaScript instead of RoR for our development.
 
+Critical URLs: https://github.com/NickQiZhu/d3-cookbook
+https://github.com/NickQiZhu/d3-cookbook
+
+
 Team member: Tom, Cody, James and Aaron
 Project1: 
 
