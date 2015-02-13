@@ -17,8 +17,11 @@ Assigment for Cody and Aaron:
 
 I don't learn the horizontally-displayed bars. Please change it to vertically-dislayed bars.
 You ONLY display 10 bars with one bar for each digit (0 to 9)
+
 Use different colors for different digits. Tell me why you choose a particular color scheme.
+
 Instead of updating one bar at a time, you need to use random number generators to generate 10 numbers at once. Those numbers be floating numbers from 0.0 to 100.0. We assume that each number represents a percentage
+
 Add 4 inputs: the first one is for the total time for the animation (in seconds) and the second one for time interval between one animation to another one. The third one is for the starting number (inclusive) for the ith number. The fourth one is for the type of animation. Possible values are: Fibonacci, Factorial and Prime. (case-sensitive).
 
 Right now, two teams do not have to work closely. We are going to talk about integration later on.
