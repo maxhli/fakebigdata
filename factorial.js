@@ -2,7 +2,12 @@
 */
 
 function factorial(index) {
-	var bigInt(2);
+	var fact =  bigInt(index);
+	if(index > 1) {
+		fact = fact.times(factorial(index - 1));
+	} else {
+		return fact;
+	}
 }
 
 
