@@ -1,6 +1,8 @@
 /* How to generate a Factorial number
 */
 
+var bigInt = require("big-integer");
+
 //This function returns the factorialization of nonnegative integer, and
 //makes use of the bigInt datatype.
 //@param index the integer to be factorialized
