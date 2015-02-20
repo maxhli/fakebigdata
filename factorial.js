@@ -17,14 +17,14 @@ function factorialBigInt(index) {
 //@param index the integer to be factorialized
 function factorial(index) {
 	if(index > 1) {
-		return index = index * factorial(index - 1);
+		return index *= factorial(index - 1);
 	} else {
 		return index;
 	}
 }
 
 
-//This is all BigInteger code:
+//This is all the code from big-integer.js:
 "use strict";
 var bigInt = (function () {
     var base = 10000000, logBase = 7, zeros = "0000000";
