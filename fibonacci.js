@@ -12,3 +12,12 @@ function fibonacci(index) {
 		return index;
 	}
 }
+
+function fibonacciBigInteger(index) {
+	var fib = bigInt(index);
+	if(index > 2) {
+		return fib =  fib.add(fibonacci(index - 1)).add(fibonacci(index - 2));
+	} else {
+		return fib;
+	}
+}
