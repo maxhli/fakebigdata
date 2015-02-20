@@ -1,14 +1,3 @@
-/* How to generate a Factorial number
-*/
-
-function factorial(index) {
-	var bigInt(2);
-}
-
-
-
-
-//This is all BigInteger code:
 "use strict";
 var bigInt = (function () {
     var base = 10000000, logBase = 7, zeros = "0000000";
