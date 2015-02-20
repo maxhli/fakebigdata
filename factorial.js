@@ -1,7 +1,10 @@
 /* How to generate a Factorial number
 */
 
-function factorial(index) {
+//This function returns the factorialization of nonnegative integer, and
+//makes use of the bigInt datatype.
+//@param index the integer to be factorialized
+function factorialBigInt(index) {
 	var fact =  bigInt(index);
 	if(index > 1) {
 		return fact = fact.times(factorial(index - 1));
@@ -10,7 +13,14 @@ function factorial(index) {
 	}
 }
 
-
+//This function returns the factorialization of nonnegative integer
+function factorial(index) {
+	if(index > 1) {
+		return index = index * factorial(index - 1);
+	} else {
+		return index;
+	}
+}
 
 
 //This is all BigInteger code:
