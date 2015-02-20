@@ -14,6 +14,7 @@ function factorialBigInt(index) {
 }
 
 //This function returns the factorialization of nonnegative integer
+//@param index the integer to be factorialized
 function factorial(index) {
 	if(index > 1) {
 		return index = index * factorial(index - 1);
