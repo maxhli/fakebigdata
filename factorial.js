@@ -4,7 +4,7 @@
 function factorial(index) {
 	var fact =  bigInt(index);
 	if(index > 1) {
-		fact = fact.times(factorial(index - 1));
+		return fact = fact.times(factorial(index - 1));
 	} else {
 		return fact;
 	}
