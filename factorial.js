@@ -8,7 +8,7 @@ var bigInt = require("big-integer");
 //makes use of the big-integer datatype.
 //@param index the integer to be factorialized
 function factorialBigInt(index) {
-	if(index < 1) {
+	if(index < 1 || isNaN(index)) {
 		return "Improper input to function factorial";
 	}
 

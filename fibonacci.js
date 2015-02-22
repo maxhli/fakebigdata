@@ -8,7 +8,7 @@ var bigInt = require("big-integer");
 //and makes use of the big-integer datatype.
 //@param index the index of the desired Fibonacci number
 function fibonacciBigInt(index) {
-	if(index < 1) {
+	if(index < 1 || isNaN(index)) {
 		return "Improper input to function fibonacci";
 	}
 	var fib = bigInt(index);

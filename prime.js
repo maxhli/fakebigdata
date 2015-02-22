@@ -8,7 +8,7 @@ var bigInt = require("big-integer");
 //makes use of the big-integer datatype to generate the desired prime number.
 //@param index the index of the prime number to be generated.
 function prime(index) {
-	if(index < 1) {
+	if(index < 1 || isNaN(index)) {
 		return "Improper input to function prime";
 	}
 	var primeCount = 0;
