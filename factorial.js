@@ -1,6 +1,7 @@
 /* How to generate a Factorial number
 */
 
+//Create a big-integer class
 var bigInt = require("big-integer");
 
 //This function returns the factorialization of nonnegative integer, and
@@ -9,9 +10,9 @@ var bigInt = require("big-integer");
 function factorialBigInt(index) {
 	var fact =  bigInt(index);
 	if(index > 1) {
-		return fact = fact.times(factorial(index - 1));
+		return fact.multiply(factorial(index - 1)).toString();
 	} else {
-		return fact;
+		return fact.toString();
 	}
 }
 
@@ -24,3 +25,5 @@ function factorial(index) {
 		return index;
 	}
 }
+
+console.log(factorialBigInt(4));

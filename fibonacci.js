@@ -1,6 +1,7 @@
 /* Please put your code here for how to generate a Fibonacci number.
 */
 
+//Create a big-integer class
 var bigInt = require("big-integer");
 
 //This function returns the ith Fibonacci number in the Fiboncacci Sequence.
@@ -13,13 +14,13 @@ function fibonacci(index) {
 	}
 }
 
-function fibonacciBigInteger(index) {
+function fibonacciBigInt(index) {
 	var fib = bigInt(index);
 	if(index > 2) {
-		return fib = fib.add(fibonacci(index - 1)).add(fibonacci(index - 2));
+		return bigInt((fibonacciBigInt(index - 1))).add(fibonacciBigInt(index - 2)).toString();
 	} else {
-		return fib;
+		return fib.toString();
 	}
 }
 
-console.log(fibonacci(2));
+console.log(fibonacciBigInt(5));
