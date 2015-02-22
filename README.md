@@ -19,7 +19,7 @@ You should know how to "export" a module in node.js. Then, you should have a dem
 
 Assigment for Cody and Aaron:
 
-I don't learn the horizontally-displayed bars. Please change it to vertically-dislayed bars.
+I don't like the horizontally-displayed bars. Please change it to vertically-dislayed bars.
 You ONLY display 10 bars with one bar for each digit (0 to 9)
 
 Use different colors for different digits. Tell me why you choose a particular color scheme.
