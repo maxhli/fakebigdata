@@ -5,7 +5,7 @@
 var bigInt = require("big-integer");
 
 //This function returns the factorialization of nonnegative integer, and
-//makes use of the bigInt datatype.
+//makes use of the big-integer datatype.
 //@param index the integer to be factorialized
 function factorialBigInt(index) {
 	if(index < 1) {
