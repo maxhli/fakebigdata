@@ -8,6 +8,10 @@ var bigInt = require("big-integer");
 //makes use of the bigInt datatype.
 //@param index the integer to be factorialized
 function factorialBigInt(index) {
+	if(index < 1) {
+		return "Improper input to function factorial";
+	}
+
 	var fact =  bigInt(index);
 	if(index > 1) {
 		return fact.multiply(factorial(index - 1)).toString();

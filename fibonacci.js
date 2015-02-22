@@ -15,6 +15,9 @@ function fibonacci(index) {
 }
 
 function fibonacciBigInt(index) {
+	if(index < 1) {
+		return "Improper input to function fibonacci";
+	}
 	var fib = bigInt(index);
 	if(index > 2) {
 		return bigInt((fibonacciBigInt(index - 1))).add(fibonacciBigInt(index - 2)).toString();
