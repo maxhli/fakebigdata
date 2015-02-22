@@ -9,7 +9,7 @@ var bigInt = require("big-integer");
 //@param index the index of the prime number to be generated.
 function prime(index) {
 	if(index < 1 || isNaN(index)) {
-		return "Improper input to function prime";
+		return "Improper input to function prime. Please input a positive integer.";
 	}
 	var primeCount = 0;
 	var prm = bigInt(2);

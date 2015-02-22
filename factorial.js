@@ -9,7 +9,7 @@ var bigInt = require("big-integer");
 //@param index the integer to be factorialized
 function factorialBigInt(index) {
 	if(index < 1 || isNaN(index)) {
-		return "Improper input to function factorial";
+		return "Improper input to function factorial. Please input a positive integer.";
 	}
 
 	var fact =  bigInt(index);

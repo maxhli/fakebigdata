@@ -9,7 +9,7 @@ var bigInt = require("big-integer");
 //@param index the index of the desired Fibonacci number
 function fibonacciBigInt(index) {
 	if(index < 1 || isNaN(index)) {
-		return "Improper input to function fibonacci";
+		return "Improper input to function fibonacci. Please input a positive integer.";
 	}
 	var fib = bigInt(index);
 	if(index > 2) {
