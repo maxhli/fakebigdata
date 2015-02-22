@@ -23,4 +23,5 @@ function fibonacciBigInt(index) {
 	}
 }
 
+// To Tom: 5 is TOO SMALL. Give me something BIG
 console.log(fibonacciBigInt(5));
