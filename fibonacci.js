@@ -29,4 +29,4 @@ function fibonacci(index) {
 	}
 }
 
-console.log(fibonacciBigInt(5));
+console.log(fibonacciBigInt(10));

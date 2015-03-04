@@ -30,4 +30,4 @@ function factorial(index) {
 	}
 }
 
-console.log(factorialBigInt(4));
+console.log(factorialBigInt(45));
