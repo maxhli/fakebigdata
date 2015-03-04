@@ -6,17 +6,18 @@ var bigInt = require("big-integer");
 
 //This function returns the ith Fibonacci number in the Fiboncacci Sequence,
 //and makes use of the big-integer datatype.
-//@param index the index of the desired Fibonacci number
-function fibonacciBigInt(index) {
-	if(index < 1 || isNaN(index)) {
-		return "Improper input to function fibonacci. Please input a positive integer.";
+//@param n: the index of the desired Fibonacci number
+function fibonacciBigInt(n) {
+	var index = bigInt(n);
+	var x = bigInt.zero;
+	var y = bigInt.one;
+	if(n<=2) { return 1; }
+	for(var i = 0; i < index.subtract(1); i++) {
+	  	var tempY = y;
+	   	y = tempY.add(x);
+	  	x = tempY; 
 	}
-	var fib = bigInt(index);
-	if(index > 2) {
-		return bigInt((fibonacciBigInt(index - 1))).add(fibonacciBigInt(index - 2)).toString();
-	} else {
-		return fib.toString();
-	}
+	return y.toString();
 }
 
 //This function returns the ith Fibonacci number in the Fiboncacci Sequence.
@@ -29,4 +30,6 @@ function fibonacci(index) {
 	}
 }
 
-console.log(fibonacciBigInt(10));
+console.log(fibonacciBigInt(100));
+
+
