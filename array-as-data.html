@@ -3,51 +3,105 @@
 <head>
     <meta charset="utf-8">
     <title>Array as Data</title>
-    <!-- MAKE SURE THAT YOU FIND the correct styles.css and d3.js    -->
-    <!--  view-source:http://nickqizhu.github.io/d3-cookbook/src/chapter3/array-as-data.html  -->
-    <link rel="stylesheet" type="text/css" href="../../css/styles.css"/>
-    <script type="text/javascript" src="../../lib/d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script type="text/javascript" src="d3.js"></script>
 </head>
 
 <body>
+<div>
 
 <script type="text/javascript">
-    var data = [10, 15, 30, 50, 80, 65, 55, 30, 20, 10, 8]; // <- A
 
+	
+
+
+	function roundToTwo(num) {
+        	return +(Math.round(num + "e+2")  + "e-2");
+	}
+	
+	var interval = 1500;
+  	var num1 = roundToTwo(Math.random()*100)
+	var num2 = roundToTwo(Math.random()*100)
+	var num3 = roundToTwo(Math.random()*100)
+	var num4 = roundToTwo(Math.random()*100)
+	var num5 = roundToTwo(Math.random()*100)
+	var num6 = roundToTwo(Math.random()*100)
+	var num7 = roundToTwo(Math.random()*100)
+	var num8 = roundToTwo(Math.random()*100)
+	var num9 = roundToTwo(Math.random()*100)
+	var num10 = roundToTwo(Math.random()*100)
+	var data = [num1, num2, num3, num4, num5, num6, num7, num8, num9, num10]; // <- A
+	var colors = ["green", "lightseagreen", "teal", "Blue", "Steelblue", "midnightblue", "black", "maroon", "purple", "DarkOrchid"];
     function render(data) { // <- B
+
         // Enter
-        d3.select("body").selectAll("div.h-bar") // <- C
+        d3.select("body").selectAll("div.v-bar") // <- C
             .data(data) // <- D
             .enter() // <- E
                 .append("div") // <- F
-                    .attr("class", "h-bar")
+                    .attr("class", "v-bar")
                 .append("span"); // <- G
-
         // Update
-        d3.select("body").selectAll("div.h-bar")
-            .data(data) 
-                .style("width", function (d) { // <- H
+        d3.select("body").selectAll("div.v-bar")
+            .data(data)
+               .style("height", function (d) { // <- H
                     return (d * 3) + "px";
                 })
+
+		.style("background-color", function (d, i) { // <- H
+                    return colors[i];
+                })
+
+
+		//.style("bottom", "200px")
+
+
                 .select("span") // <- I
                     .text(function (d) {
-                        return d;
+                       return d;
                     });
-                
+
         // Exit
-        d3.select("body").selectAll("div.h-bar")
+        d3.select("body").selectAll("div.v-bar")
             .data(data)
             .exit() // <- J
-                .remove();        
+                .remove();
     }
-
     setInterval(function () { // <- K
-        data.shift();
-        data.push(Math.round(Math.random() * 100));
+        // data.shift();
+        // data.push(Math.round(Math.random() * 100));
+	num1 = roundToTwo(Math.random()*100)
+  num2 = roundToTwo(Math.random()*100)
+	num3 = roundToTwo(Math.random()*100)
+	num4 = roundToTwo(Math.random()*100)
+	num5 = roundToTwo(Math.random()*100)
+	num6 = roundToTwo(Math.random()*100)
+	num7 = roundToTwo(Math.random()*100)
+	num8 = roundToTwo(Math.random()*100)
+	num9 = roundToTwo(Math.random()*100)
+	num10 = roundToTwo(Math.random()*100)
+	data = [num1, num2, num3, num4, num5, num6, num7, num8, num9, num10];
         render(data);
-    }, 1500);
-
+    }, interval);
     render(data);
+</script>
+
+</div>
+	<form id="frm1" action="form_action.asp" name="frm1">
+	Total animation time (seconds): <input type="text" name="time" size="7"> <br>
+	Time interval: <input type="text" name="interval" id="interval" size="7"> <br>
+	Starting number (inclusive): <input type="text" name="start" size="7"> <br>
+	Animation type (Fibonacci, Factorial, or Prime): <input type="text" name="type" size="10"> <br>
+	<input type="button" onclick="myFunction()" value="Update">
+        </form>
+
+
+<script>
+   function myFunction() {
+      //document.getElementById("frm1").submit();
+      //interval = 
+      console.log(document.getElementById("frm1").interval)
+   }
 </script>
 
 </body>
