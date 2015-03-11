@@ -14,7 +14,7 @@ function factorialBigInt(index) {
 
 	var fact =  bigInt(index);
 	if(index > 1) {
-		return fact.multiply(factorial(index - 1)).toString();
+		return fact.multiply(factorialBigInt(index - 1)).toString();
 	} else {
 		return fact.toString();
 	}
