@@ -13,7 +13,7 @@ var bigInt = require("big-integer");
 //NOTE: "Javascript numbers larger than 9007199254740992 and smaller than -9007199254740992 are not precisely
 //represented numbers and will not produce exact results. If you are dealing with numbers outside that range,
 //it is better to pass in strings."
-//-peterolson, creator of the big-integer class.
+//-Peter Olson, creator of the big-integer class.
 function digitDistribution(num) {
 	//Check to make sure that the input is an integer in base 10:
 	if(isNaN(num))
