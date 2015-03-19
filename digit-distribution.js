@@ -4,3 +4,22 @@
 //Create a big-integer class
 var bigInt = require("big-integer");
 
+
+//This function returns an array of length 10: each element represents
+//the percentage of the input integer taken up by the index of that element.
+//Thus, the element at index 0 represents the percentage of the input comprised by 
+//the digit 0.
+function digitDistribution(num) {
+	num = num.toString();
+
+	var countArray = [0,0,0,0,0,0,0,0,0,0];
+	var percentageArray = [0,0,0,0,0,0,0,0,0,0];
+	for(var i = 0; i < num.length; i++) {
+		countArray[num.charAt(i)]++;
+	}
+
+	return countArray.toString();
+}
+
+
+console.log(digitDistribution(1234521));
