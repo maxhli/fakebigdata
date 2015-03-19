@@ -45,4 +45,9 @@ function digitDistribution(num) {
 	return percentageArray;
 }//End function digitDistribution
 
+//Test cases:
+console.log(digitDistribution(12313234245599));
+console.log(digitDistribution(-9988776234234));
+console.log(digitDistribution(+3434234230998));
 console.log(digitDistribution("-99878777657678979808987988912322342354564567434"));
+console.log(digitDistribution("+23489249091237834901230938428350943982234823849237491248239847293866"));
