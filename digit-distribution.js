@@ -5,10 +5,14 @@
 var bigInt = require("big-integer");
 
 
-//This function returns an array of length 10: each element represents
-//the percentage of the input integer taken up by the index of that element.
-//Thus, the element at index 0 represents the percentage of the input comprised by 
-//the digit 0.
+//This function reads in an integer and returns an array of length 10, representing the percentages
+//of the integer comprised by the digits 0-9. Thus, the element at index 0 represents the percentage of
+//the integer made up of the digit 0.
+//
+//NOTE: "Javascript numbers larger than 9007199254740992 and smaller than -9007199254740992 are not precisely
+//represented numbers and will not produce exact results. If you are dealing with numbers outside that range,
+//it is better to pass in strings."
+//-peterolson, creator of the big-integer class.
 function digitDistribution(num) {
 	//Check to make sure that the input is an integer:
 	if(isNaN(num))
@@ -16,6 +20,7 @@ function digitDistribution(num) {
 
 	//Create a big-integer representation of the input:
 	var bigNum = bigInt(num);
+	//Get the absolute value of the input:
 	bigNum = bigInt(bigNum.abs());
 
 	//Create a string representation of the big-integer:
@@ -44,4 +49,4 @@ function digitDistribution(num) {
 	return percentageArray;
 }
 
-console.log(digitDistribution("998787776576789798089879889123234"));
+console.log(digitDistribution("-99878777657678979808987988912322342354564567434"));
