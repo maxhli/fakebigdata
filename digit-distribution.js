@@ -38,12 +38,18 @@ function digitDistribution(num) {
 
 	//Turn counts into percentages (rounded to 2 decimal places) and puts them in the percentageArray:
 	for(var i = 0; i < 10; i++) {
-		percentageArray[i] = Math.round(countArray[i] / str.length * 100 * 100) / 100;
+		percentageArray[i] = roundToTwo(countArray[i] / str.length * 100);
 	}
 
 	//Return the frequency percentages:
 	return percentageArray;
 }//End function digitDistribution
+
+//This helper function simply rounds the input number to two decimal places, and is
+//used in the digitDistribution function:
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}//End function roundToTwo.
 
 //Test cases:
 console.log(digitDistribution(12313234245599));
