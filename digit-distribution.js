@@ -10,15 +10,20 @@ var bigInt = require("big-integer");
 //Thus, the element at index 0 represents the percentage of the input comprised by 
 //the digit 0.
 function digitDistribution(num) {
-	num = num.toString();
-
 	//Check to make sure that the input is an integer:
 	if(isNaN(num))
 		return "Improper input to function digitDistribution. Please input an integer";
 
+	//Create a big-integer representation of the input:
+	var bigNum = bigInt(num);
+	bigNum = bigInt(bigNum.abs());
+
+	//Create a string representation of the big-integer:
+	var str = bigNum.toString();
+
 	//Check to see if the input contains a "-" or a "+" prefix; if so, remove it before continuing:
-	if(num.indexOf('-') >= 0 || num.indexOf('+') >= 0)
-		num = num.substring(1);
+	//if(str.indexOf('-') >= 0 || str.indexOf('+') >= 0)
+		//str = str.substring(1);
 
 	//Initialize a count array for frequencies of digits 0-9:
 	var countArray = [0,0,0,0,0,0,0,0,0,0];
@@ -26,18 +31,17 @@ function digitDistribution(num) {
 	var percentageArray = [0,0,0,0,0,0,0,0,0,0];
 
 	//Count the frequency of each digit 0-9 in the input number:
-	for(var i = 0; i < num.length; i++) {
-		countArray[num.charAt(i)]++;
-	}
+	for(var i = 0; i < str.length; i++) {
+		countArray[str.charAt(i)]++;
+	} //End function digitDistribution.
 
 	//Turn counts into percentages to be returned as an array:
 	for(var i = 0; i < 10; i++) {
-		percentageArray[i] = countArray[i] / num.length * 100;
+		percentageArray[i] = countArray[i] / str.length * 100;
 	}
 
 	//Return the frequency percentages:
 	return percentageArray;
 }
 
-
-console.log(digitDistribution("-1020"));
+console.log(digitDistribution("998787776576789798089879889123234"));
