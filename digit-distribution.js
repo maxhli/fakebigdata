@@ -36,9 +36,9 @@ function digitDistribution(num) {
 		countArray[str.charAt(i)]++;
 	} 
 
-	//Turn counts into percentages and puts them in the percentageArray:
+	//Turn counts into percentages (rounded to 2 decimal places) and puts them in the percentageArray:
 	for(var i = 0; i < 10; i++) {
-		percentageArray[i] = countArray[i] / str.length * 100;
+		percentageArray[i] = Math.round(countArray[i] / str.length * 100 * 100) / 100;
 	}
 
 	//Return the frequency percentages:
