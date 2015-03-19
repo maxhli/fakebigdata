@@ -17,8 +17,9 @@ var bigInt = require("big-integer");
 function digitDistribution(num) {
 	//Check to make sure that the input is an integer:
 	if(isNaN(num))
-		return "Improper input to function digitDistribution. Please input an integer";
+		return "Improper input to function digitDistribution. Please input an integer in base 10.";
 
+	//Get string representation of input:
 	var str = num.toString();
 
 	//Check to see if the input contains a "-" or a "+" prefix; if so, remove it before continuing:
