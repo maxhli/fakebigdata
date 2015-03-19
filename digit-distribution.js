@@ -35,7 +35,7 @@ function digitDistribution(num) {
 		countArray[str.charAt(i)]++;
 	} //End function digitDistribution.
 
-	//Turn counts into percentages to be returned as an array:
+	//Turn counts into percentages and puts them in the percentageArray:
 	for(var i = 0; i < 10; i++) {
 		percentageArray[i] = countArray[i] / str.length * 100;
 	}
