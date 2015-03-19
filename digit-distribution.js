@@ -17,18 +17,13 @@ function digitDistribution(num) {
 	//Check to make sure that the input is an integer:
 	if(isNaN(num))
 		return "Improper input to function digitDistribution. Please input an integer";
-
-	//Create a big-integer representation of the input:
-	var bigNum = bigInt(num);
-	//Get the absolute value of the input:
-	bigNum = bigInt(bigNum.abs());
-
-	//Create a string representation of the big-integer:
-	var str = bigNum.toString();
+	
+	var str = num.toString();
+	console.log(str);
 
 	//Check to see if the input contains a "-" or a "+" prefix; if so, remove it before continuing:
-	//if(str.indexOf('-') >= 0 || str.indexOf('+') >= 0)
-		//str = str.substring(1);
+	if(str.indexOf('-') >= 0 || str.indexOf('+') >= 0)
+		str = str.substring(1);
 
 	//Initialize a count array for frequencies of digits 0-9:
 	var countArray = [0,0,0,0,0,0,0,0,0,0];
