@@ -34,7 +34,7 @@ function digitDistribution(num) {
 	//Count the frequency of each digit 0-9 in the input number:
 	for(var i = 0; i < str.length; i++) {
 		countArray[str.charAt(i)]++;
-	} //End function digitDistribution.
+	} 
 
 	//Turn counts into percentages and puts them in the percentageArray:
 	for(var i = 0; i < 10; i++) {
@@ -43,6 +43,6 @@ function digitDistribution(num) {
 
 	//Return the frequency percentages:
 	return percentageArray;
-}
+}//End function digitDistribution
 
 console.log(digitDistribution("-99878777657678979808987988912322342354564567434"));
