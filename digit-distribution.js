@@ -15,7 +15,7 @@ var bigInt = require("big-integer");
 //it is better to pass in strings."
 //-peterolson, creator of the big-integer class.
 function digitDistribution(num) {
-	//Check to make sure that the input is an integer:
+	//Check to make sure that the input is an integer in base 10:
 	if(isNaN(num))
 		return "Improper input to function digitDistribution. Please input an integer in base 10.";
 
