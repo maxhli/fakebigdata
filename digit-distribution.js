@@ -17,8 +17,11 @@ function digitDistribution(num) {
 	for(var i = 0; i < num.length; i++) {
 		countArray[num.charAt(i)]++;
 	}
+	for(var i = 0; i < 10; i++) {
+		percentageArray[i] = countArray[i] / num.length * 100;
+	}
 
-	return countArray.toString();
+	return percentageArray;
 }
 
 
