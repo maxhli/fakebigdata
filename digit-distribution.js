@@ -2,6 +2,7 @@
 	that comprise an integer in base 10. */ 
 
 //Create a big-integer class
+//Currently not in use.
 var bigInt = require("big-integer");
 
 
@@ -17,9 +18,8 @@ function digitDistribution(num) {
 	//Check to make sure that the input is an integer:
 	if(isNaN(num))
 		return "Improper input to function digitDistribution. Please input an integer";
-	
+
 	var str = num.toString();
-	console.log(str);
 
 	//Check to see if the input contains a "-" or a "+" prefix; if so, remove it before continuing:
 	if(str.indexOf('-') >= 0 || str.indexOf('+') >= 0)
