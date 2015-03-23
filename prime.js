@@ -24,4 +24,4 @@ function prime(index) {
 	return returnPrime;
 }
 
-console.log(prime(5));
+console.log(prime(6000));
