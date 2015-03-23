@@ -30,8 +30,6 @@ class NumberFileOutput
 	  
 	  end
 	
-	
-	
 	  # handle the last line
 	  if  reminder > 0
 	  	tail = strContent[counter * @width, reminder]

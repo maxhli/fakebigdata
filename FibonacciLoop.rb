@@ -8,9 +8,9 @@ class FibonacciLoop
    first, second = 1, 1
    loop = 1
    while (loop <= (n - 2))
-    first, second = second, first + second
-	loop += 1
-    end
+     first, second = second, first + second
+	 loop += 1
+   end
   
     return second
   end

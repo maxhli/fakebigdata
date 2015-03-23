@@ -9,6 +9,8 @@ ending = ARGV[1].to_i
 width = 70
 left = 5
 right = 5
+
+
 numberOut = NumberFileOutput.new(width, left, right)
 
 primeNumber = PrimeNumber.new

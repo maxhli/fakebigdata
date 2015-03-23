@@ -15,7 +15,7 @@ function fibonacciBigInt(n) {
 	for(var i = 0; i < index.subtract(1); i++) {
 	  	var tempY = y;
 	   	y = tempY.add(x);
-	  	x = tempY; 
+	  	x = tempY;
 	}
 	return y.toString();
 }
@@ -31,5 +31,4 @@ function fibonacci(index) {
 }
 
 
-console.log(fibonacciBigInt(100));
-
+console.log(fibonacciBigInt(99));
