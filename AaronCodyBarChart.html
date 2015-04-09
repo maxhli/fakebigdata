@@ -176,6 +176,16 @@
         chart.render();
 
     }
+
+    function digitDist(num) {
+        data.length = 0;
+        var digitPercentage = digitDistribution(factorialBigInt(num));
+        document.getElementById('factorial-output').innerHTML = factorialBigInt(num);
+        for (var j = 0; j < numberOfDataPoint; ++j)
+            data.push({x: j, y: digitPercentage[j]});
+        chart.render();
+    }
+
     var numberOfDataPoint = 10,
     // var numberOfDataPoint = 31,
         data = [];
@@ -199,8 +209,6 @@
       setTimeout(stopLoop, document.getElementById("time").value * 1000)
     }
 
-
-
     function stopLoop() {
       clearInterval(abc);
     }
@@ -209,9 +217,7 @@
 
     }
 
-    function digitDist(num) {
-        document.getElementById('factorial-output').innerHTML = factorialBigInt(num);
-    }
+
 
 </script>
 
