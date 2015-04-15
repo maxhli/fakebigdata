@@ -230,13 +230,18 @@
     <option value="Fibonacci">Fibonacci</option>
     <option value="Factorial">Factorial</option>
   </select> <br>-->
-    Nth Factorial Number: <input type="number" name="factorial" id="factorial" value="1"> <br>
-    Factorial Output: <br>
+    Nth Factorial Number: <input type="number" name="factorial" id="factorial" value="1">
+    <input type="button" onclick="digitDist(document.getElementById('factorial').value)" value="Submit"> <br>
+    Nth Fibonacci Number: <input type="number" name="fibonacci" id="fibonacci" value="1">
+    <input type="button" onclick="digitDist(document.getElementById('fibonacci').value)" value="Submit"> <br>
+    Nth Prime Number: <input type="number" name="prime" id="prime" value="1">
+    <input type="button" onclick="digitDist(document.getElementById('prime').value)" value="Submit"> <br>
+    Output: <br>
     <textarea name="factorial-output" id="factorial-output" cols="50" rows="5"></textarea> <br>
 
 
 
-<input type="button" onclick="digitDist(document.getElementById('factorial').value)" value="Submit">
+<!--<input type="button" onclick="digitDist(document.getElementById('factorial').value)" value="Submit">-->
 
 
 </form>
