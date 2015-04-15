@@ -20,4 +20,4 @@ function fibonacci(n) {
 	return y.toString();
 }
 
-console.log(fibonacciBigInt(99));
+console.log(fibonacci(99));

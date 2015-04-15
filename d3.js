@@ -7896,7 +7896,7 @@ d3 = function() {
   };
   function d3_svg_axisX(selection, x) {
     selection.attr("transform", function(d) {
-      return "translate(" + x(d) + ",0)";
+      return "translate(" + (parseInt(x(d), 10) + 35) + ",0)";
     });
   }
   function d3_svg_axisY(selection, y) {

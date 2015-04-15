@@ -15,6 +15,7 @@
 <script type="text/javascript" src="prime.js"></script>
 <script type="text/javascript" src="digit-distribution.js"></script>
 <script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 
     var colors = ["green", "lightseagreen", "teal", "Blue", "Steelblue", "midnightblue", "black", "maroon", "purple", "DarkOrchid"];
@@ -109,7 +110,7 @@
                     .attr("width", function(d){
                         return Math.floor(quadrantWidth() / _data.length) - padding;
                     })
-                    .style("background-color", function (d, i) { // <- H
+                    .style("fill", function (d, i) { // <- H
                                     return colors[i];
                                 });
 
@@ -171,20 +172,44 @@
     function randomData() {
         return Math.random() * 100;
     }
-    function update() {
+
+    function startAnimation(start, end, interval) {
+        /*
         data.length = 0;
         for (var j = 0; j < numberOfDataPoint; ++j)
             data.push({x: j, y: randomData()});
         chart.render();
-
+        */
+       data.length = 0;
+        switch(document.getElementById('number-type-select').value) {
+            case "1":
+                var funcName = factorial;
+                break;
+            case "2":
+                var funcName = fibonacci;
+                break;
+            default:
+                var funcName = prime;
+                break;
+        }
+        
+        for(var i = start; i <= end; i++) {
+            var digitPercentage = digitDistribution(funcName(i));
+            for (var j = 0; j < numberOfDataPoint; ++j) {
+                data.push({x: j, y: digitPercentage[j]});
+            }
+            chart.render();
+            setTimeout(interval);
+        }
     }
 
     function digitDist(num, funcNum) {
+        console.log(funcNum);
         switch(funcNum) {
-            case 1:
+            case "1":
                 var funcName = factorial;
                 break;
-            case 2:
+            case "2":
                 var funcName = fibonacci;
                 break;
             default:
@@ -236,22 +261,19 @@
 </script>
 
 <form id="frm1" action="" name="frm1">
-	<!--Total animation time (seconds): <input type="text" name="time" size="7" id="time" value="10"> <br>
+	Total animation time (seconds): <input type="text" name="time" size="7" id="time" value="10"> <br>
 	Time interval (seconds): <input type="text" name="interval" id="interval" size="7" id="interval" value="1"> <br>
 	Starting number (inclusive): <input type="text" name="start" size="7" id="start" value="1"> <br>
-	Animation type (Fibonacci, Factorial, or Prime): <select>
-    <option value="Prime">Prime</option>
-    <option value="Fibonacci">Fibonacci</option>
-    <option value="Factorial">Factorial</option>
-  </select> <br>-->
-    Nth Factorial Number: <input type="number" name="factorial" id="factorial" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('factorial').value, 1)" value="Submit"> <br>
-    Nth Fibonacci Number: <input type="number" name="fibonacci" id="fibonacci" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('fibonacci').value, 2)" value="Submit"> <br>
-    Nth Prime Number: <input type="number" name="prime" id="prime" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('prime').value, 3)" value="Submit"> <br>
+    Ending number (inclusive): <input type="text" name="end" size="7" id="end" value="20"> <br>
+	Animation type (Fibonacci, Factorial, or Prime): <select id="number-type-select">
+    <option value="1">Factorial</option>
+    <option value="2">Fibonacci</option>
+    <option value="3">Prime</option>
+  </select> <br>
+    Nth Number: <input type="number" name="factorial" id="factorial" value="1">
+    <input type="button" onclick="digitDist(document.getElementById('factorial').value, document.getElementById('number-type-select').value)" value="Submit"> <br>
     Output: <br>
-    <textarea name="big-int-output" id="big-int-output" cols="50" rows="5"></textarea> <br>
+    <textarea name="big-int-output" id="big-int-output" cols="60" rows="5"></textarea> <br>
 
 
 
@@ -260,20 +282,19 @@
 
 </form>
 
-<!--
+
 <div class="control-group">
-    <button onclick="update()">Update</button>
+    <button onclick="startAnimation(document.getElementById('start').value, document.getElementById('end').value, document.getElementById('interval').value)">Start Animation</button>
 </div>
 
 <div class="control-group">
-    <button onclick="foreverLoop()">foreverLoop</button>
+    <button onclick="foreverLoop()">Continuous Loop</button>
 </div>
 
 
 <div class="control-group">
-    <button onclick="stopLoop()">stopLoop</button>
+    <button onclick="stopLoop()">Stop Animation</button>
 </div>
--->
 
 
 

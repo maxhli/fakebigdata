@@ -14,10 +14,10 @@ function factorial(index) {
 
 	var fact =  bigInt(index);
 	if(index > 1) {
-		return fact.multiply(factorialBigInt(index - 1)).toString();
+		return fact.multiply(factorial(index - 1)).toString();
 	} else {
 		return fact.toString();
 	}
 }
 
-console.log(factorialBigInt(45));
+console.log(factorial(45));
