@@ -11,6 +11,8 @@
 
 
 <script type="text/javascript" src="factorial.js"></script>
+<script type="text/javascript" src="fibonacci.js"></script>
+<script type="text/javascript" src="prime.js"></script>
 <script type="text/javascript" src="digit-distribution.js"></script>
 <script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
 <script type="text/javascript">
@@ -177,7 +179,19 @@
 
     }
 
-    function digitDist(num, funcName) {
+    function digitDist(num, funcNum) {
+        switch(funcNum) {
+            case 1:
+                var funcName = factorial;
+                break;
+            case 2:
+                var funcName = fibonacci;
+                break;
+            default:
+                var funcName = prime;
+                break;
+        }
+        console.log(funcName);
         data.length = 0;
         var digitPercentage = digitDistribution(funcName(num));
         document.getElementById('big-int-output').innerHTML = funcName(num);
@@ -231,11 +245,11 @@
     <option value="Factorial">Factorial</option>
   </select> <br>-->
     Nth Factorial Number: <input type="number" name="factorial" id="factorial" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('factorial').value, factorial)" value="Submit"> <br>
+    <input type="button" onclick="digitDist(document.getElementById('factorial').value, 1)" value="Submit"> <br>
     Nth Fibonacci Number: <input type="number" name="fibonacci" id="fibonacci" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('fibonacci').value, fibonacci)" value="Submit"> <br>
+    <input type="button" onclick="digitDist(document.getElementById('fibonacci').value, 2)" value="Submit"> <br>
     Nth Prime Number: <input type="number" name="prime" id="prime" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('prime').value, prime)" value="Submit"> <br>
+    <input type="button" onclick="digitDist(document.getElementById('prime').value, 3)" value="Submit"> <br>
     Output: <br>
     <textarea name="big-int-output" id="big-int-output" cols="50" rows="5"></textarea> <br>
 
