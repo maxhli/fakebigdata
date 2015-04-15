@@ -173,6 +173,7 @@
         return Math.random() * 100;
     }
 
+    var breakAnimation = false;
     function startAnimation(start, end, interval) {
         /*
         data.length = 0;
@@ -180,6 +181,7 @@
             data.push({x: j, y: randomData()});
         chart.render();
         */
+       breakAnimation = false;
        data.length = 0;
        var timeout = interval * 1000;
        //console.log("Timeout: " + timeout);
@@ -199,10 +201,12 @@
         var counter = start - 1;
 
         function next() {
+            if(breakAnimation)
+                return;
             data.length = 0;
-            if(counter++ <= end) {
+            if(counter++ <= end && counter >= 0) {
                 var digitPercentage = digitDistribution(funcName(counter));
-                console.log(digitPercentage);
+                //console.log(digitPercentage);
                 for (var j = 0; j < numberOfDataPoint; ++j) {
                     data.push({x: j, y: digitPercentage[j]});
                 }
@@ -211,8 +215,7 @@
                 setTimeout(next, timeout);
             }
         }
-        next();
-        
+        next();   
     }
 
 
@@ -265,8 +268,8 @@
       clearInterval(abc);
     }
 
-    function myFunction() {
-
+    function stopAnimation() {
+        breakAnimation = true;
     }
 
 
@@ -286,6 +289,7 @@
     <input type="button" onclick="digitDist(document.getElementById('factorial').value, document.getElementById('number-type-select').value)" value="Submit"> <br>
     Output: <br>
     <textarea name="big-int-output" id="big-int-output" cols="60" rows="5"></textarea> <br>
+    <div id="hidden-num"></div>
 
 
 
@@ -299,13 +303,13 @@
     <button onclick="startAnimation(document.getElementById('start').value, document.getElementById('end').value, document.getElementById('interval').value)">Start Animation</button>
 </div>
 
-<div class="control-group">
+<!--<div class="control-group">
     <button onclick="foreverLoop()">Continuous Loop</button>
-</div>
+</div>-->
 
 
 <div class="control-group">
-    <button onclick="stopLoop()">Stop Animation</button>
+    <button onclick="stopAnimation()">Stop Animation</button>
 </div>
 
 
