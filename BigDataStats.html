@@ -181,6 +181,8 @@
         chart.render();
         */
        data.length = 0;
+       var timeout = interval * 1000;
+       //console.log("Timeout: " + timeout);
         switch(document.getElementById('number-type-select').value) {
             case "1":
                 var funcName = factorial;
@@ -192,16 +194,27 @@
                 var funcName = prime;
                 break;
         }
-        
-        for(var i = start; i <= end; i++) {
-            var digitPercentage = digitDistribution(funcName(i));
-            for (var j = 0; j < numberOfDataPoint; ++j) {
-                data.push({x: j, y: digitPercentage[j]});
+
+        //console.log(funcName);
+        var counter = start - 1;
+
+        function next() {
+            data.length = 0;
+            if(counter++ <= end) {
+                var digitPercentage = digitDistribution(funcName(counter));
+                console.log(digitPercentage);
+                for (var j = 0; j < numberOfDataPoint; ++j) {
+                    data.push({x: j, y: digitPercentage[j]});
+                }
+                chart.render();
+                document.getElementById('big-int-output').innerHTML = funcName(counter);
+                setTimeout(next, timeout);
             }
-            chart.render();
-            setTimeout(interval);
         }
+        next();
+        
     }
+
 
     function digitDist(num, funcNum) {
         console.log(funcNum);
@@ -245,7 +258,7 @@
          update();
 
          }, document.getElementById("interval").value * 1000);
-      setTimeout(stopLoop, document.getElementById("time").value * 1000)
+      setTimeout(stopLoop, document.getElementById("time").value * 1000);
     }
 
     function stopLoop() {
@@ -261,7 +274,6 @@
 </script>
 
 <form id="frm1" action="" name="frm1">
-	Total animation time (seconds): <input type="text" name="time" size="7" id="time" value="10"> <br>
 	Time interval (seconds): <input type="text" name="interval" id="interval" size="7" id="interval" value="1"> <br>
 	Starting number (inclusive): <input type="text" name="start" size="7" id="start" value="1"> <br>
     Ending number (inclusive): <input type="text" name="end" size="7" id="end" value="20"> <br>
