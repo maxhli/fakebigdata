@@ -29,3 +29,7 @@ Instead of updating one bar at a time, you need to use random number generators 
 Add 4 inputs: the first one is for the total time for the animation (in seconds) and the second one for time interval between one animation to another one. The third one is for the starting number (inclusive) for the ith number. The fourth one is for the type of animation. Possible values are: Fibonacci, Factorial and Prime. (case-sensitive). You need to use those inputs to control your program.
 
 Right now, two teams do not have to work closely. We are going to talk about integration later on.
+
+New Intruction (Wednesday, April 29, 2015)
+
+Need to separate main logic into two parts: client side and server side. On the client side, you should be able to call things like getPercentageData('Prime', 200). The first parameter is the name of the number series:.
