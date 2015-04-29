@@ -32,4 +32,7 @@ Right now, two teams do not have to work closely. We are going to talk about int
 
 New Intruction (Wednesday, April 29, 2015)
 
-Need to separate main logic into two parts: client side and server side. On the client side, you should be able to call things like getPercentageData('Prime', 200). The first parameter is the name of the number series:.
+Need to separate main logic into two parts: client side and server side. On the client side, you should be able to call things like getPercentageData('Prime', 200). The first parameter is the name of the number series. The second parameter is the n th number in that series.
+
+You need to use $http call from Angular.js to get the needed value. Check the videos made by Michael, the Physics guy. 
+https://www.youtube.com/watch?v=kHV7gOHvNdk
