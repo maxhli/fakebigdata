@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Bar Chart</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
-    <script type="text/javascript" src="d3.js"></script>
-</head>
+var express = require('express');
+var app = express();
 
-<body>
+app.use(express.static(__dirname + "/public"));
+
+app.get('/data', function(req, res) {
+	console.log('I received a GET request');
+});
+
+app.listen(3000);
+console.log("Server running on port 3000");
 
 
-<script type="text/javascript" src="factorial.js"></script>
-<script type="text/javascript" src="fibonacci.js"></script>
-<script type="text/javascript" src="prime.js"></script>
-<script type="text/javascript" src="digit-distribution.js"></script>
-<script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
-<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-<script type="text/javascript">
 
-    var colors = ["green", "lightseagreen", "teal", "Blue", "Steelblue", "midnightblue", "black", "maroon", "purple", "DarkOrchid"];
+
+
+
+
+
+var colors = ["green", "lightseagreen", "teal", "Blue", "Steelblue", "midnightblue", "black", "maroon", "purple", "DarkOrchid"];
 
 
     function barChart() {
@@ -204,7 +203,7 @@
             if(breakAnimation)
                 return;
             data.length = 0;
-            if(counter++ <= end && counter >= 0) {
+            if(counter++ < end && counter >= 0) {
                 var digitPercentage = digitDistribution(funcName(counter));
                 //console.log(digitPercentage);
                 for (var j = 0; j < numberOfDataPoint; ++j) {
@@ -271,50 +270,3 @@
     function stopAnimation() {
         breakAnimation = true;
     }
-
-
-
-</script>
-
-<form id="frm1" action="" name="frm1">
-	Time interval (seconds): <input type="text" name="interval" id="interval" size="7" id="interval" value="1"> <br>
-	Starting number (inclusive): <input type="text" name="start" size="7" id="start" value="1"> <br>
-    Ending number (inclusive): <input type="text" name="end" size="7" id="end" value="20"> <br>
-	Animation type (Fibonacci, Factorial, or Prime): <select id="number-type-select">
-    <option value="1">Factorial</option>
-    <option value="2">Fibonacci</option>
-    <option value="3">Prime</option>
-  </select> <br>
-    Nth Number: <input type="number" name="factorial" id="factorial" value="1">
-    <input type="button" onclick="digitDist(document.getElementById('factorial').value, document.getElementById('number-type-select').value)" value="Submit"> <br>
-    Output: <br>
-    <textarea name="big-int-output" id="big-int-output" cols="60" rows="5"></textarea> <br>
-    <div id="hidden-num"></div>
-
-
-
-<!--<input type="button" onclick="digitDist(document.getElementById('factorial').value)" value="Submit">-->
-
-
-</form>
-
-
-<div class="control-group">
-    <button onclick="startAnimation(document.getElementById('start').value, document.getElementById('end').value, document.getElementById('interval').value)">Start Animation</button>
-</div>
-
-<!--<div class="control-group">
-    <button onclick="foreverLoop()">Continuous Loop</button>
-</div>-->
-
-
-<div class="control-group">
-    <button onclick="stopAnimation()">Stop Animation</button>
-</div>
-
-
-
-
-</body>
-
-</html>
